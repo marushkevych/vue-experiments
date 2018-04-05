@@ -29,9 +29,7 @@
   <div id="app-4">
     <h2>TODOS</h2>
     <ol>
-      <li v-for="todo in todos">
-        {{ todo.text }}
-      </li>
+      <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
     </ol>
     <input type="text" v-model="newTodo">
     <button v-on:click="add">
@@ -39,6 +37,7 @@
     </button>
   </div>
 
+  <script src="todoItem.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
