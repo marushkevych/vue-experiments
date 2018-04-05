@@ -22,7 +22,7 @@ var app2 = new Vue({
 var app4 = new Vue({
   el: '#app-4',
   data: {
-    newTodo: '',
+    newTodoText: '',
     todos: [
       {text: 'foo'},
       {text: 'bar'}
@@ -30,10 +30,22 @@ var app4 = new Vue({
   },
   methods: {
     add: function() {
-      if(this.newTodo) {
-        this.todos.push({text: this.newTodo})
-        this.newTodo = ''
+      if(this.newTodoText) {
+        this.todos.push({text: this.newTodoText})
+        this.newTodoText = ''
       }
+    },
+    updateFirstTodo: function() {
+      // can not use index to update elements in array:
+      // this.todos[0] = {text: this.newTodoText}
+      // see https://vuejs.org/2016/02/06/common-gotchas/
+
+      // this.todos[0].text = this.newTodoText
+
+      // you can also use Array instance methods
+      this.todos.splice(0, 1, {text: this.newTodoText})
+
+      this.newTodoText = ''
     }
   }
 })

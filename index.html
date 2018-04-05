@@ -31,10 +31,9 @@
     <ol>
       <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
     </ol>
-    <input type="text" v-model="newTodo">
-    <button v-on:click="add">
-      Add
-    </button>
+    <input type="text" v-model="newTodoText">
+    <button v-on:click="add">Add</button>
+    <button v-on:click="updateFirstTodo">update first todo</button>
   </div>
 
   <div id="mutate-obj">
