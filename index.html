@@ -1,0 +1,44 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <div id="app-2">
+    <button v-on:click="show = !show">Toggle</button>
+    <button v-on:click="reverseMessage">Reverse</button>
+    <transition name="fade">
+      <span v-bind:title="title" v-if="show">
+        {{message}}
+      </span>
+    </transition>
+  </div>
+
+  <div id="app-4">
+    <h2>TODOS</h2>
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+    <input type="text" v-model="newTodo">
+    <button v-on:click="add">
+      Add
+    </button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
