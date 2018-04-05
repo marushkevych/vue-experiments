@@ -37,6 +37,12 @@
     </button>
   </div>
 
+  <div id="mutate-obj">
+    <h2>Update nested properties</h2>
+    <input type="text" v-model="firstName"><button v-on:click="updateFirstName">update first name</button>
+    {{obj.firstName}} {{obj.lastName}}
+  </div>
+
   <script src="todoItem.js"></script>
   <script src="main.js"></script>
 </body>

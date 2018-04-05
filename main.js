@@ -37,3 +37,20 @@ var app4 = new Vue({
     }
   }
 })
+
+var mutateObj = new Vue({
+  el: '#mutate-obj',
+  data: {
+    firstName: '',
+    obj: {firstName: 'Billy', lastName: 'Joel'}
+  },
+  methods: {
+    updateFirstName: function() {
+      this.obj.firstName = this.firstName
+    }
+  }
+})
+
+mutateObj.$watch('obj.firstName', function (newValue, oldValue) {
+  console.log('obj.firstName changed to', newValue)
+})
